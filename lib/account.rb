@@ -15,4 +15,7 @@ class Account
   def withdraw(sum)
     @balance -= sum
   end
+
+  def statement
+  end
 end
