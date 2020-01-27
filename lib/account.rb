@@ -1,6 +1,6 @@
 class Account
 
-  def initialize(start_balance = 0)
+  def initialize(start_balance = 0, transaction = Transaction)
     @balance = start_balance
   end
 
