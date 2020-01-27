@@ -3,6 +3,14 @@
     "coverage": {
       "/Users/charlespaterson/Code/bank_tech_test/lib/account.rb": [
         1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/charlespaterson/Code/bank_tech_test/spec/account_spec.rb": [
@@ -10,10 +18,11 @@
         1,
         1,
         5,
+        5,
         null,
         null,
         1,
-        null,
+        1,
         null,
         null,
         1,
@@ -34,6 +43,6 @@
         null
       ]
     },
-    "timestamp": 1580126779
+    "timestamp": 1580128091
   }
 }
