@@ -7,14 +7,14 @@ build a simple simulation of a bank that fulfils the following user stories:
 ```
 
 As a user
-Who wants to track their money 
+Who wants to track their money
 I would like an account with a bank wherein I can see my balance
-(Status: Passing test)
+(Status: passing tests)
 
 As a user
 So that I can store money
 I would like to be able to deposit it into a bank account
-(status: building tests)
+(status: passing tests)
 
 As a user
 So that I can later take money out to spend

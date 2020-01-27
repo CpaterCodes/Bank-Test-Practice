@@ -7,4 +7,8 @@ class Account
   def show_balance
     return "Current balance: £#{@balance}"
   end
+
+  def deposit(sum)
+    @balance += sum
+  end
 end

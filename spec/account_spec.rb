@@ -10,7 +10,8 @@ describe "Account" do
   end
 
   it "Should accept a deposit" do
-
+    @account.deposit(50)
+    expect(@account.show_balance).to include "#{@start + 50}"
   end
 
   it "Should allow a withdrawal" do
