@@ -23,8 +23,8 @@ class Account
   end
 
   def statement
-    statement = title
-    statement << body
+    text = title
+    text << body
   end
 
   private
@@ -35,7 +35,7 @@ class Account
 
   def body
     rows = ""
-    @transactions.reverse.each { |i| rows << "#{i.date} || #{i.credit} || #{i.debit} || #{i.balance}\n" }
+    @transactions.reverse.each { |i| rows << "#{i.date} || #{i.credit} || #{i.debit} || #{i.balance}" + "\n" }
     return rows
   end
 end

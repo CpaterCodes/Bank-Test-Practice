@@ -37,4 +37,11 @@ describe "Account" do
     @account.withdraw(10)
     expect(@account.statement).to include("#{@d.day}/#{@d.month}/#{@d.year}")
   end
+
+  it "Should show amounts deposited or withdrawn in transactions" do
+    @account.withdraw(90)
+    @account.deposit(20)
+    expect(@account.statement).to include("90")
+    expect(@account.statement).to include("20")
+  end
 end
