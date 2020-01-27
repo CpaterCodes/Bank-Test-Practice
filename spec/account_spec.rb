@@ -1,4 +1,3 @@
-
 describe "Account" do
   before :each do
     @start = 100
@@ -24,7 +23,7 @@ describe "Account" do
     expect(@account.statement).to include "date || credit || debit || balance"
   end
 
-  it "Should track amounts of all transactions" do
+  it "Should track end balances of all transactions" do
     @account.withdraw(30)
     @account.deposit(100)
     @account.withdraw(20)
