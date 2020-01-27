@@ -24,10 +24,13 @@ I would like to be able to be able to later withdraw from said bank account
 As a user
 So that I can keep track of all such activities and be alerted to fraud
 I would like to be able to see the date/amount of all activities
-(status: building tests)
+(status: passing tests)
 
 As a user
 As if it really needs saying at this point
 I would like this to be saved in memory somehow
 (status: building tests)
 ```
+
+While there is still much to be done with regards to refactoring and formatting tests and code, I feel that
+the project is starting to come together.
