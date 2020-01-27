@@ -17,5 +17,12 @@ class Account
   end
 
   def statement
+    title
+  end
+
+  private
+
+  def title
+    "date || credit || debit || balance"
   end
 end

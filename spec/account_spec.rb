@@ -20,6 +20,10 @@ describe "Account" do
     expect(@account.show_balance).to include "#{@start - 70}"
   end
 
+  it "should produce a statement" do
+    expect(@account.statement).to include "date || credit || debit || balance"
+  end
+
   it "Should track amounts of all transactions" do
     @account.withdraw(30)
     @account.deposit(100)
