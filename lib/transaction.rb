@@ -4,5 +4,8 @@ class Transaction
   def initialize(credit: nil, debit: nil, balance: 0)
     t = Time.now
     @date = "#{t.day}/#{t.month}/#{t.year}"
+    @credit = credit
+    @debit = debit
+    @balance = balance
   end
 end
