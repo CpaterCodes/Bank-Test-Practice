@@ -14,4 +14,12 @@ describe "Account" do
   it "Should allow a withdrawal" do
 
   end
+
+  it "Should track amounts of all transactions" do
+
+  end
+
+  it "Should track times of all transactions" do
+    
+  end
 end

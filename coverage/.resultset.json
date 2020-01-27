@@ -4,7 +4,15 @@
       "/Users/charlespaterson/Code/bank_tech_test/spec/account_spec.rb": [
         1,
         1,
-        3,
+        5,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
         null,
         null,
         1,
@@ -21,6 +29,6 @@
         null
       ]
     },
-    "timestamp": 1580125994
+    "timestamp": 1580126421
   }
 }
