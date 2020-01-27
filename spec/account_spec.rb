@@ -1,3 +1,4 @@
+
 describe "Account" do
   before :each do
     account = Account.new
@@ -20,6 +21,6 @@ describe "Account" do
   end
 
   it "Should track times of all transactions" do
-    
+
   end
 end

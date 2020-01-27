@@ -1,7 +1,12 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/charlespaterson/Code/bank_tech_test/lib/account.rb": [
+        1,
+        null
+      ],
       "/Users/charlespaterson/Code/bank_tech_test/spec/account_spec.rb": [
+        null,
         1,
         1,
         5,
@@ -29,6 +34,6 @@
         null
       ]
     },
-    "timestamp": 1580126421
+    "timestamp": 1580126779
   }
 }
