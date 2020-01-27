@@ -21,6 +21,6 @@ describe "Transaction" do
   end
 
   it "Cannot both deposit and withdraw" do
-    expect{ Transaction.new(debit: 10, credit: 10) }.to raise_error "Can't withdraw and deposit simultaneously"
+    expect { Transaction.new(debit: 10, credit: 10) }.to raise_error "Can't withdraw and deposit simultaneously"
   end
 end

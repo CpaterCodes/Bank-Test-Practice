@@ -19,15 +19,16 @@ class Account
 
   def statement
     title
+    @transactions.reverse.each { |transaction| row(transaction) }
   end
 
   private
 
   def title
-    "date || credit || debit || balance"
+    puts "date || credit || debit || balance"
   end
 
   def row(transaction)
-    "#{transaction.balance}"
+    puts "#{transaction.balance}"
   end
 end

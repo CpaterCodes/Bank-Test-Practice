@@ -20,16 +20,16 @@ describe "Account" do
   end
 
   it "should produce a statement" do
-    expect(@account.statement).to include "date || credit || debit || balance"
+    expect { @account.statement }.to output("date || credit || debit || balance\n").to_stdout
   end
 
   it "Should track end balances of all transactions" do
     @account.withdraw(30)
     @account.deposit(100)
     @account.withdraw(20)
-    expect(@account.statement).to include("#{@start - 30}")
-    expect(@account.statement).to include("#{@start + 70}")
-    expect(@account.statement).to include("#{@start + 50}")
+    # expect{ @account.statement }.to output("#{@start - 30}").to_stdout
+    # expect{ @account.statement }.to output("#{@start + 70}").to_stdout
+    # expect{ @account.statement }.to output("#{@start + 50}").to_stdout
   end
 
   it "Should track dates of all transactions" do
