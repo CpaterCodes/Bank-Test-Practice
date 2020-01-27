@@ -15,7 +15,8 @@ describe "Account" do
   end
 
   it "Should allow a withdrawal" do
-
+    @account.withdraw(70)
+    expect(@account.show_balance).to include "#{@start - 70}"
   end
 
   it "Should track amounts of all transactions" do

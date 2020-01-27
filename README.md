@@ -19,7 +19,7 @@ I would like to be able to deposit it into a bank account
 As a user
 So that I can later take money out to spend
 I would like to be able to be able to later withdraw from said bank account
-(status: building tests)
+(status: passing tests)
 
 As a user
 So that I can keep track of all such activities and be alerted to fraud
