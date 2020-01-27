@@ -2,7 +2,7 @@ describe "Account" do
   before :each do
     @start = 100
     @account = Account.new(@start)
-    @date = Time.now
+    @d = Time.now
   end
 
   it "Should show a balance" do
@@ -20,19 +20,21 @@ describe "Account" do
   end
 
   it "should produce a statement" do
-    expect { @account.statement }.to output("date || credit || debit || balance\n").to_stdout
+    expect(@account.statement).to include("date || credit || debit || balance\n")
   end
 
   it "Should track end balances of all transactions" do
+
     @account.withdraw(30)
     @account.deposit(100)
     @account.withdraw(20)
-    # expect{ @account.statement }.to output("#{@start - 30}").to_stdout
-    # expect{ @account.statement }.to output("#{@start + 70}").to_stdout
-    # expect{ @account.statement }.to output("#{@start + 50}").to_stdout
+    expect(@account.statement).to include("#{@start - 30}")
+    expect(@account.statement).to include("#{@start + 70}")
+    expect(@account.statement).to include("#{@start + 50}")
   end
 
   it "Should track dates of all transactions" do
-
+    @account.withdraw(10)
+    expect(@account.statement).to include("#{@d.day}/#{@d.month}/#{@d.year}")
   end
 end

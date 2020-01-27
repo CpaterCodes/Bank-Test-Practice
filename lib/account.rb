@@ -1,8 +1,11 @@
+require_relative "transaction"
+
 class Account
 
   def initialize(start_balance = 0, transaction = Transaction)
     @balance = start_balance
     @transactions = []
+    @transaction = transaction
   end
 
   def show_balance
@@ -11,24 +14,28 @@ class Account
 
   def deposit(sum)
     @balance += sum
+    @transactions << @transaction.new(credit: sum, balance: @balance)
   end
 
   def withdraw(sum)
     @balance -= sum
+    @transactions << @transaction.new(debit: sum, balance: @balance)
   end
 
   def statement
-    title
-    @transactions.reverse.each { |transaction| row(transaction) }
+    statement = title
+    statement << body
   end
 
   private
 
   def title
-    puts "date || credit || debit || balance"
+    "date || credit || debit || balance\n"
   end
 
-  def row(transaction)
-    puts "#{transaction.balance}"
+  def body
+    rows = ""
+    @transactions.reverse.each { |i| rows << "#{i.date} || #{i.credit} || #{i.debit} || #{i.balance}\n" }
+    return rows
   end
 end
