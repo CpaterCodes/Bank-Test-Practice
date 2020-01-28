@@ -1,7 +1,7 @@
 describe "Transaction" do
 
   before :each do
-    t = Time.now
+    t = Timecop.freeze(2037, 1, 1)
     @date = "#{t.day}/#{t.month}/#{t.year}"
     @deposit = Transaction.new(credit: 10)
     @withdrawal = Transaction.new(debit: 10)

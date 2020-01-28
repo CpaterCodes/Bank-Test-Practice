@@ -3,7 +3,7 @@ describe "Account" do
   class FakeTransaction
     attr_reader :date, :credit, :debit, :balance
     def initialize(credit: nil, debit: nil, balance: 0)
-      @date = "#{Time.now.day}/#{Time.now.month}/#{Time.now.year}"
+      @date = "1/1/2037"
       @credit = credit
       @debit = debit
       @balance = balance
@@ -11,7 +11,7 @@ describe "Account" do
   end
 
   before :each do
-    @d = Time.now
+    @d = Timecop.freeze(2037, 1, 1)
     @start = 100
     @account = Account.new(@start, FakeTransaction)
   end
@@ -45,7 +45,7 @@ describe "Account" do
 
   it "Should track dates of all transactions" do
     @account.withdraw(10)
-    expect(@account.statement).to include("#{@d.day}/#{@d.month}/#{@d.year}")
+    expect(@account.statement).to include("1/1/2037")
   end
 
   it "Should show amounts deposited or withdrawn in transactions" do
