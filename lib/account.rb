@@ -18,6 +18,7 @@ class Account
   end
 
   def withdraw(sum)
+    raise "You do not have that amount stored" if sum > @balance
     @balance -= sum
     @transactions << @transaction.new(debit: sum, balance: @balance)
   end

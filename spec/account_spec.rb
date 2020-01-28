@@ -44,4 +44,8 @@ describe "Account" do
     expect(@account.statement).to include("90")
     expect(@account.statement).to include("20")
   end
+
+  it "Should not allow negative balance" do
+    expect { @account.withdraw(110) }.to raise_error "You do not have that amount stored"
+  end
 end

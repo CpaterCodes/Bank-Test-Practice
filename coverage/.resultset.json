@@ -7,9 +7,9 @@
         1,
         null,
         1,
-        7,
-        7,
-        7,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -22,6 +22,7 @@
         null,
         null,
         1,
+        6,
         5,
         5,
         null,
@@ -65,9 +66,9 @@
       "/Users/charlespaterson/Code/bank_tech_test/spec/account_spec.rb": [
         1,
         1,
-        7,
-        7,
-        7,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -108,6 +109,10 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        2,
         null,
         null
       ],
@@ -140,6 +145,6 @@
         null
       ]
     },
-    "timestamp": 1580214050
+    "timestamp": 1580214740
   }
 }
