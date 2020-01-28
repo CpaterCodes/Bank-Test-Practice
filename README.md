@@ -34,3 +34,14 @@ I would like this to be saved in memory somehow
 
 While there is still much to be done with regards to refactoring and formatting tests and code, I feel that
 the project is starting to come together.
+
+**To run:**
+
+- Fork and clone this repository
+
+- Run 'bundle install' within the root of the repository in the terminal
+
+- To play around with the program, enter 'irb' into the terminal to active the irb
+and type and enter 'require ./lib/account'. From here you can test and use methods
+
+- Alternatively, to run tests enter 'rspec' into the terminal. To lint the code, enter 'rubocop'.
