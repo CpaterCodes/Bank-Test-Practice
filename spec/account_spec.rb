@@ -2,7 +2,7 @@ describe "Account" do
 
   class FakeTransaction
     attr_reader :date, :credit, :debit, :balance
-    def initialize (credit: nil, debit: nil, balance:0)
+    def initialize(credit: nil, debit: nil, balance: 0)
       @date = "#{Time.now.day}/#{Time.now.month}/#{Time.now.year}"
       @credit = credit
       @debit = debit
@@ -10,7 +10,6 @@ describe "Account" do
     end
   end
 
-  let(:transaction) { double('fake transaction')}
   before :each do
     @d = Time.now
     @start = 100
