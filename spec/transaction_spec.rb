@@ -8,7 +8,6 @@ describe "Transaction" do
   end
 
   it "Should return the date in a readable format" do
-    p @date
     expect(@deposit.date).to eq @date
   end
 

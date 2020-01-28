@@ -1,9 +1,9 @@
 class Transaction
   attr_reader :date, :credit, :debit, :balance
 
-  def initialize(credit: nil, debit: nil, balance: 0, time: Time.now)
+  def initialize(credit: nil, debit: nil, balance: 0, date: Time.now)
     Transaction.valid?(credit, debit)
-    @date = "#{time.day}/#{time.month}/#{time.year}"
+    @date = "#{date.day}/#{date.month}/#{date.year}"
     @credit = credit
     @debit = debit
     @balance = balance

@@ -1,8 +1,20 @@
 describe "Account" do
+
+  class FakeTransaction
+    attr_reader :date, :credit, :debit, :balance
+    def initialize (credit: nil, debit: nil, balance:0)
+      @date = "#{Time.now.day}/#{Time.now.month}/#{Time.now.year}"
+      @credit = credit
+      @debit = debit
+      @balance = balance
+    end
+  end
+
+  let(:transaction) { double('fake transaction')}
   before :each do
-    @start = 100
-    @account = Account.new(@start)
     @d = Time.now
+    @start = 100
+    @account = Account.new(@start, FakeTransaction)
   end
 
   it "Should show a balance" do
@@ -24,7 +36,6 @@ describe "Account" do
   end
 
   it "Should track end balances of all transactions" do
-
     @account.withdraw(30)
     @account.deposit(100)
     @account.withdraw(20)
