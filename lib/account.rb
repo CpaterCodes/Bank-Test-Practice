@@ -1,4 +1,5 @@
 require_relative "transaction"
+require_relative "statement"
 
 class Account
   attr_reader :balance
@@ -20,8 +21,8 @@ class Account
     @transactions << @transaction.new(debit: sum, balance: @balance)
   end
 
-  def print_statement(statement_class = Statement)
-    # Code pending
+  def print_statement(statement_class = Statement.new(@transactions))
+    puts statement_class.compile
   end
 
 end
