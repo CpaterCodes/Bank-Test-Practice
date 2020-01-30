@@ -1,15 +1,11 @@
 require_relative "transaction"
 
 class Account
-
+attr_reader :balance
   def initialize(start_balance = 0, transaction = Transaction)
     @balance = start_balance
     @transactions = []
     @transaction = transaction
-  end
-
-  def show_balance
-    return "Current balance: £#{@balance}"
   end
 
   def deposit(sum)
@@ -19,7 +15,7 @@ class Account
 
   def withdraw(sum)
     raise "You do not have that amount stored" if sum > @balance
-    
+
     @balance -= sum
     @transactions << @transaction.new(debit: sum, balance: @balance)
   end
