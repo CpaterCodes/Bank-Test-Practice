@@ -34,6 +34,10 @@ so that I can break up my development process into smaller, more manageable chun
 focus on the external behaviour exhibited by the design rather than worrying excessively about
 the internal states.
 
+In this same vein I have also tried to create as many classes with as few responsibilities as
+possible, making it a lot easier to mock dependencies and put each component under the
+microscope in testing.
+
 **To run:**
 
 - Fork and clone this repository
