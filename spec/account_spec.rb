@@ -3,7 +3,7 @@ describe "Account" do
   before :each do
     @start = 100
     @account = Account.new(@start)
-    @fake_statement = double("statement", compile: "date || credit || debit || balance\n")
+    @fake_statement = double("statement", compile: "date || credit || debit || balance\n1/1/2037 || || 10.00 || 20.00")
   end
 
   it "Should accept a deposit" do
@@ -17,7 +17,7 @@ describe "Account" do
   end
 
   it "should produce a statement" do
-    expect { @account.print_statement(@fake_statement) }.to output("date || credit || debit || balance\n").to_stdout
+    expect { @account.print_statement(@fake_statement) }.to output("date || credit || debit || balance\n1/1/2037 || || 10.00 || 20.00\n").to_stdout
   end
 
   it "Should not allow negative balance" do

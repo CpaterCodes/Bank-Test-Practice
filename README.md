@@ -19,7 +19,7 @@ I would like to be able to be able to later withdraw from said bank account
 As a user
 So that I can keep track of all such activities and be alerted to fraud
 I would like to be able to see the date/amount of all activities
-(status: passing tests, dependency extraction pending)
+(status: passing tests)
 
 As a user
 As if it really needs saying at this point
