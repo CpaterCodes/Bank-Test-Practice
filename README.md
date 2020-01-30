@@ -27,8 +27,12 @@ I would like this to be saved in memory somehow
 (status: building tests)
 ```
 
-While there is still much to be done with regards to refactoring and formatting tests and code, I feel that
-the project is starting to come together.
+While there is still much to be done with regards to refactoring and formatting tests and
+code,I feel that the project is starting to come together. I am taking a strictly test-driven
+approach to development on this project, mocking dependencies to the best of my ability. This is
+so that I can break up my development process into smaller, more manageable chunks and keep my
+focus on the external behaviour exhibited by the design rather than worrying excessively about
+the internal states.
 
 **To run:**
 
