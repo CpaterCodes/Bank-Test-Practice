@@ -6,8 +6,8 @@ class Statement
 
   def compile
     @transactions.each do |transaction|
-      @text << "#{transaction.date}.00 || #{transaction.credit}.00 ||"
-      @text << " #{transaction.debit}.00 || #{transaction.balance}.00\n"
+      @text << "#{transaction.date} || #{transaction.credit}||"
+      @text << " #{transaction.debit} || #{transaction.balance}\n"
     end
     @text
   end

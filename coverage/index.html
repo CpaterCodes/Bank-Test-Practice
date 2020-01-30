@@ -221,7 +221,7 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    @transactions &lt;&lt; @transaction.new(credit: sum, balance: @balance)</code>
+          <code class="ruby">    @transactions &lt;&lt; @transaction.new(credit: &quot;#{sum}.00&quot;, balance: &quot;#{@balance}.00&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -263,7 +263,7 @@
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    @transactions &lt;&lt; @transaction.new(debit: sum, balance: @balance)</code>
+          <code class="ruby">    @transactions &lt;&lt; @transaction.new(debit: &quot;#{sum}.00&quot;, balance: &quot;#{@balance}.00&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -378,13 +378,13 @@
         <li class="covered" data-hits="10" data-linenumber="9">
           <span class="hits">10</span>
           
-          <code class="ruby">      @text &lt;&lt; &quot;#{transaction.date}.00 || #{transaction.credit}.00 ||&quot;</code>
+          <code class="ruby">      @text &lt;&lt; &quot;#{transaction.date} || #{transaction.credit}||&quot;</code>
         </li>
       
         <li class="covered" data-hits="10" data-linenumber="10">
           <span class="hits">10</span>
           
-          <code class="ruby">      @text &lt;&lt; &quot; #{transaction.debit}.00 || #{transaction.balance}.00\n&quot;</code>
+          <code class="ruby">      @text &lt;&lt; &quot; #{transaction.debit} || #{transaction.balance}\n&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -457,7 +457,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(credit: nil, debit: nil, balance: 0, date: Time.now)</code>
+          <code class="ruby">  def initialize(credit: nil, debit: nil, balance: nil, date: Time.now)</code>
         </li>
       
         <li class="covered" data-hits="11" data-linenumber="5">

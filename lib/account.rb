@@ -11,14 +11,14 @@ class Account
 
   def deposit(sum)
     @balance += sum
-    @transactions << @transaction.new(credit: sum, balance: @balance)
+    @transactions << @transaction.new(credit: "#{sum}.00", balance: "#{@balance}.00")
   end
 
   def withdraw(sum)
     raise "You do not have that amount stored" if sum > @balance
 
     @balance -= sum
-    @transactions << @transaction.new(debit: sum, balance: @balance)
+    @transactions << @transaction.new(debit: "#{sum}.00", balance: "#{@balance}.00")
   end
 
   def print_statement(statement_class = Statement.new(@transactions))
