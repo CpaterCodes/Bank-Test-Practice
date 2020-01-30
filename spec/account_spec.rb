@@ -1,19 +1,9 @@
 describe "Account" do
 
-  class FakeTransaction
-    attr_reader :date, :credit, :debit, :balance
-    def initialize(credit: nil, debit: nil, balance: 0)
-      @date = "1/1/2037"
-      @credit = credit
-      @debit = debit
-      @balance = balance
-    end
-  end
-
   before :each do
     @d = Timecop.freeze(2037, 1, 1)
     @start = 100
-    @account = Account.new(@start, FakeTransaction)
+    @account = Account.new(@start)
   end
 
   it "Should show a balance" do
@@ -31,28 +21,7 @@ describe "Account" do
   end
 
   it "should produce a statement" do
-    expect(@account.statement).to include("date || credit || debit || balance\n")
-  end
-
-  it "Should track end balances of all transactions" do
-    @account.withdraw(30)
-    @account.deposit(100)
-    @account.withdraw(20)
-    expect(@account.statement).to include("#{@start - 30}")
-    expect(@account.statement).to include("#{@start + 70}")
-    expect(@account.statement).to include("#{@start + 50}")
-  end
-
-  it "Should track dates of all transactions" do
-    @account.withdraw(10)
-    expect(@account.statement).to include("1/1/2037")
-  end
-
-  it "Should show amounts deposited or withdrawn in transactions" do
-    @account.withdraw(90)
-    @account.deposit(20)
-    expect(@account.statement).to include("90")
-    expect(@account.statement).to include("20")
+    expect { @account.statement }.to output("date || credit || debit || balance\n").to_stdout
   end
 
   it "Should not allow negative balance" do

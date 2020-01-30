@@ -19,27 +19,13 @@ class Account
 
   def withdraw(sum)
     raise "You do not have that amount stored" if sum > @balance
-
+    
     @balance -= sum
     @transactions << @transaction.new(debit: sum, balance: @balance)
   end
 
-  def statement
-    text = title
-    text << body
+  def print_statement(statement_class = Statement)
+   # Code pending
   end
 
-  private
-
-  def title
-    "date || credit || debit || balance\n"
-  end
-
-  def body
-    rows = ""
-    @transactions.reverse.each do |i|
-      rows << "#{i.date} || #{i.credit} || #{i.debit} || #{i.balance}\n"
-    end
-    return rows
-  end
 end
