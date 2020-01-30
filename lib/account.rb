@@ -1,7 +1,7 @@
 require_relative "transaction"
 
 class Account
-attr_reader :balance
+  attr_reader :balance
   def initialize(start_balance = 0, transaction = Transaction)
     @balance = start_balance
     @transactions = []
@@ -21,7 +21,7 @@ attr_reader :balance
   end
 
   def print_statement(statement_class = Statement)
-   # Code pending
+    # Code pending
   end
 
 end
