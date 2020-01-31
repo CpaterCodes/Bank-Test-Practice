@@ -8,7 +8,7 @@ describe "Account" do
   end
 
   it "Requires a starting balance" do
-    expect { Account.new(transaction: @fake_transaction)}.to raise_error "Account requires a starting balance"
+    expect { Account.new(transaction: @fake_transaction) }.to raise_error "Account requires a starting balance"
   end
 
   it "Should accept a deposit" do
