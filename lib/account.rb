@@ -2,8 +2,9 @@ require_relative "transaction"
 require_relative "statement"
 
 class Account
-  attr_reader :balance
-  def initialize(start_balance = 0, transaction = Transaction)
+  def initialize(start_balance = nil, transaction = Transaction)
+    raise "Account requires a starting balance" if start_balance.nil?
+
     @balance = start_balance
     @transactions = []
     @transaction = transaction
@@ -24,5 +25,9 @@ class Account
   def print_statement(statement_class = Statement.new(@transactions))
     puts statement_class.compile
   end
+
+  private
+
+  attr_reader :balance
 
 end

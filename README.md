@@ -9,12 +9,12 @@ build a simple simulation of a bank that fulfils the following user stories:
 As a user
 So that I can store money
 I would like to be able to deposit it into a bank account
-(status: passing tests)
+(status: refactoring tests)
 
 As a user
 So that I can later take money out to spend
 I would like to be able to be able to later withdraw from said bank account
-(status: passing tests)
+(status: refactoring tests)
 
 As a user
 So that I can keep track of all such activities and be alerted to fraud
@@ -44,7 +44,21 @@ microscope in testing.
 
 - Run 'bundle install' within the root of the repository in the terminal
 
-- To play around with the program, enter 'irb' into the terminal to active the irb
-and type and enter 'require ./lib/account'. From here you can test and use methods
+- To play around with the program, do the following:
+```
+1. Type and enter 'irb' into your terminal
+
+2. Enter 'require './lib/account'' into the terminal
+
+3. Enter 'account = Account.new(sum)' with sum being an integer and account
+being any name that you desire!
+
+4. Use account.deposit(sum) to add a sum to this initial sum, or
+account.withdraw(sum) to subtract a sum from it.
+
+5. Use account.print_statement to return a record of every time you enacted the
+methods from step 4, complete with dates and amounts involved. Type 'exit' to
+close Irb when you are done
+```
 
 - Alternatively, to run tests enter 'rspec' into the terminal. To lint the code, enter 'rubocop'.
