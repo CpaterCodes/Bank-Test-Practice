@@ -1,23 +1,24 @@
 describe "Account" do
 
   before :each do
-    fake_transaction = class_double('transaction')
-    allow(fake_transaction).to receive(:new).with({ balance: "150.00", credit: "50.00" })
+    @fake_transaction = class_double('transaction')
     @start = 100
-    @account = Account.new(@start, fake_transaction)
+    @account = Account.new(start_balance: @start, transaction: @fake_transaction)
     @fake_statement = double("statement", compile: "date || credit || debit || balance\n1/1/2037 || || 10.00 || 20.00")
   end
 
   it "Requires a starting balance" do
-    expect { Account.new }.to raise_error "Account requires a starting balance"
+    expect { Account.new(transaction: @fake_transaction)}.to raise_error "Account requires a starting balance"
   end
 
   it "Should accept a deposit" do
+    allow(@fake_transaction).to receive(:new).with({ balance: "150.00", credit: "50.00" })
     @account.deposit(50)
     expect(@account).to respond_to(:deposit)
   end
 
   it "Should allow a withdrawal" do
+    allow(@fake_transaction).to receive(:new).with({ balance: "30.00", debit: "70.00" })
     @account.withdraw(70)
     expect(@account).to respond_to(:withdraw)
   end

@@ -2,7 +2,7 @@ require_relative "transaction"
 require_relative "statement"
 
 class Account
-  def initialize(start_balance = nil, transaction = Transaction)
+  def initialize(start_balance: nil, transaction: Transaction)
     raise "Account requires a starting balance" if start_balance.nil?
 
     @balance = start_balance
