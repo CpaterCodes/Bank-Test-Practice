@@ -14,7 +14,7 @@ I would like to be able to deposit it into a bank account
 As a user
 So that I can later take money out to spend
 I would like to be able to be able to later withdraw from said bank account
-(status: refactoring tests)
+(status: passing tests)
 
 As a user
 So that I can keep track of all such activities and be alerted to fraud
@@ -50,15 +50,15 @@ microscope in testing.
 
 2. Enter 'require './lib/account'' into the terminal
 
-3. Enter 'account = Account.new(sum)' with sum being an integer and account
-being any name that you desire!
+3. Enter 'account = Account.new(start_balance: sum)' with sum being
+an integer and account being any name that you desire!
 
 4. Use account.deposit(sum) to add a sum to this initial sum, or
 account.withdraw(sum) to subtract a sum from it.
 
-5. Use account.print_statement to return a record of every time you enacted the
-methods from step 4, complete with dates and amounts involved. Type 'exit' to
-close Irb when you are done
+5. Use account.print_statement to return a record of every time you
+enacted the methods from step 4, complete with dates and amounts
+involved. This should display in reverse chronological order. Type 'exit' to close Irb when you are done
 ```
 
 - Alternatively, to run tests enter 'rspec' into the terminal. To lint the code, enter 'rubocop'.

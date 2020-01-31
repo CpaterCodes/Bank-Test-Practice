@@ -5,7 +5,7 @@ class Statement
   end
 
   def compile
-    @transactions.each do |transaction|
+    @transactions.reverse.each do |transaction|
       @text << "#{transaction.date} || #{transaction.credit}||"
       @text << " #{transaction.debit} || #{transaction.balance}\n"
     end
